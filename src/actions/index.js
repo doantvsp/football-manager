@@ -44,3 +44,33 @@ export const deletePlayer = (id) => {
 		id
 	}
 }
+
+export const getPlayerByIdRequest = (id) => {
+	return (dispatch) => {
+		return callApi(`players/${id}`,'GET').then(res => {
+			dispatch(getPlayerById(res.data));
+		});
+	}
+}
+
+export const getPlayerById = (Player) => {
+	return {
+		type: 'PLAYER_EDITTING',
+		Player
+	}
+}
+
+export const udaptePlayerRequest = (Player) => {
+	return (dispatch) => {
+		return callApi(`players/${Player.id}`,'PUT',Player).then(res => {
+			dispatch(udaptePlayer(res.data));
+		});
+	}
+}
+
+export const udaptePlayer = (Player) => {
+	return {
+		type: 'UPDATE_PLAYER',
+		Player
+	}
+}

@@ -4,6 +4,7 @@ class AddPlayer extends Component {
 	constructor(props){
 		super(props);
 		this.state={
+			id: '',
 			name:'',
 			age:'',
 			club: ''
@@ -19,6 +20,19 @@ class AddPlayer extends Component {
 		});
 	}
 
+	componentDidMount (){
+		var {match} = this.props;
+		if(match.params.id){
+			this.props.getPlayerById(match.params.id);
+		}
+		else{
+			console.log('addd');
+		}
+	}
+	componentWillReceiveProps (newProps){
+		var {PlayerEditting} = newProps;
+		this.setState(PlayerEditting);
+	}
 	onSubmit = (e) => {
 		e.preventDefault();
 		this.props.onSubmit(this.state);

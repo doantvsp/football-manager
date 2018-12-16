@@ -15,9 +15,9 @@ const Routers = [
 		main: () => <PlayersContainer/>
 	},
 	{
-		path: '/player/add',
-		exact: true,
-		main: ({history}) => <AddPlayerContainer history={history} />
+		path: '/player/add/:id?',
+		exact: false,
+		main: ({history,match}) => <AddPlayerContainer history={history} match={match} />
 	}
 ];
 export default Routers;

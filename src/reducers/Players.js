@@ -23,6 +23,10 @@ const Players = (state = initData,action) => {
 				state.splice(index,1);
 			}
 			return [...state];
+		case 'UPDATE_PLAYER':
+		 	index = findIndex(state,action.Player.id);
+			state[index] = action.Player;
+			return [...state];
 		default:
 			return [...state];
 	}

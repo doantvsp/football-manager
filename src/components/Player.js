@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Player extends Component {
   render() {
@@ -10,7 +11,7 @@ class Player extends Component {
         <td>{player.age}</td>
         <td>{player.club}</td>
         <td>
-          <button type="button" className="btn btn-default">EDIT</button>
+          <Link to={`/player/add/${player.id}`} className="btn btn-default">EDIT</Link>
           <button type="button" className="btn btn-default" onClick={()=>{this.onDeletePlayer(player.id)}}>DELETE</button>
         </td>
       </tr>
