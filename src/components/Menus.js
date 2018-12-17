@@ -7,7 +7,7 @@ const MenuList = [
     label: 'Home'
   },
   {
-    to: '/Players',
+    to: '/players',
     label: 'Players'
   }
 ];
