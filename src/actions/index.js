@@ -74,3 +74,18 @@ export const udaptePlayer = (Player) => {
 		Player
 	}
 }
+
+export const getListArticleRequest = () => {
+	return (dispatch) => {
+		return callApi('articles').then(res => {
+			dispatch(getListArticle(res.data));
+		});
+	}
+}
+
+export const getListArticle = (Articles) => {
+	return {
+		type: 'GET_ALL_ARTICLE',
+		Articles
+	}
+}

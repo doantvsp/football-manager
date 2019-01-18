@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-
+import New from './New';
 class Home extends Component {
   render() {
     return (      
-      <h1> This is home page ! </h1>
+      <div className="container-fluid">
+      	<div className="row">
+      		{this.props.children}
+      	</div>
+      </div>
     );
   }
 }

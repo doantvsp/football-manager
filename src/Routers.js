@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './components/Home';
+import HomeContainer from './containers/HomeContainer';
 import PlayersContainer from './containers/PlayersContainer';
 import AddPlayerContainer from './containers/AddPlayerContainer';
 
@@ -7,7 +7,7 @@ const Routers = [
 	{
 		path: '/',
 		exact: true,
-		main: () => <Home />
+		main: () => <HomeContainer />
 	},
 	{
 		path: '/players',
