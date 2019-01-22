@@ -3,7 +3,7 @@ import New from './New';
 class Home extends Component {
   render() {
     return (      
-      <div className="container-fluid">
+      <div className="custom-container" >
       	<div className="row">
       		{this.props.children}
       	</div>
