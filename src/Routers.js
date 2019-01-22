@@ -2,7 +2,7 @@ import React from 'react';
 import HomeContainer from './containers/HomeContainer';
 import PlayersContainer from './containers/PlayersContainer';
 import AddPlayerContainer from './containers/AddPlayerContainer';
-import NewDetail from './components/NewDetail';
+import NewDetailContainer from './containers/NewDetailContainer';
 
 const Routers = [
 	{
@@ -23,7 +23,7 @@ const Routers = [
 	{
 		path: '/new/:id?',
 		exact: false,
-		main: ({history,match}) => <NewDetail history={history} match={match} />
+		main: ({history,match}) => <NewDetailContainer history={history} match={match} />
 	}
 ];
 export default Routers;

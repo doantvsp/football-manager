@@ -89,3 +89,18 @@ export const getListArticle = (Articles) => {
 		Articles
 	}
 }
+
+export const getNewInfoByIdRequest = (id) => {
+	return (dispatch) => {
+		return callApi(`articles/${id}`).then(res => {
+			dispatch(getNewInfoById(res.data));
+		});
+	}
+}
+
+export const getNewInfoById = (Article) => {
+	return {
+		type: 'GET_ARTICLE_BY_ID',
+		Article
+	}
+}
